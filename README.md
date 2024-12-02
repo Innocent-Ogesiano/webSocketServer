@@ -27,7 +27,7 @@ cd <project-folder>
 
 ### 2. **Configure PostgreSQL Database**
 
-1. Create a database named `realtime_db` (or any name of your choice).
+1. Create a database named `event_db` (or any name of your choice).
 2. Update `src/main/resources/application.properties` with your PostgreSQL credentials:
    ```properties
    spring.datasource.url=jdbc:postgresql://localhost:5432/event_db
