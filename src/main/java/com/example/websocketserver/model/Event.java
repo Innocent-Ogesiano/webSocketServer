@@ -1,8 +1,11 @@
 package com.example.websocketserver.model;
 
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
+import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Type;
 
 import java.time.LocalDateTime;
 
@@ -17,7 +20,8 @@ public class Event {
     @Column(nullable = false)
     private String eventType;
 
-    @Column(nullable = false, columnDefinition = "JSONB")
+    @Type(JsonType.class)
+    @Column(nullable = false, columnDefinition = "jsonb")
     private String payload;
 
     @Column(nullable = false)
